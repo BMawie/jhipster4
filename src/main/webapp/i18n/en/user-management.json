@@ -25,6 +25,14 @@
         "createdBy": "Created by",
         "createdDate": "Created date",
         "lastModifiedBy": "Modified by",
-        "lastModifiedDate": "Modified date"
+        "lastModifiedDate": "Modified date",
+        "civility": "Civility",
+        "username": "Username",
+        "birthDate": "Birth Date",
+        "birthCountry": "Birth Country",
+        "birthCity": "Birth City",
+        "birthDept": "Birth Dept",
+        "nationality": "Nationality",
+        "otherNames": "Other Names"
     }
 }

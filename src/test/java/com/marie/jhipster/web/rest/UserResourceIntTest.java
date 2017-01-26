@@ -2,6 +2,7 @@ package com.marie.jhipster.web.rest;
 
 import com.marie.jhipster.JhipsterApp;
 import com.marie.jhipster.domain.User;
+import com.marie.jhipster.domain.enumeration.CivilityEnum;
 import com.marie.jhipster.repository.UserRepository;
 import com.marie.jhipster.service.UserService;
 
@@ -19,6 +20,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -30,6 +34,30 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = JhipsterApp.class)
 public class UserResourceIntTest {
+
+    private static final CivilityEnum DEFAULT_CIVILITY = CivilityEnum.MADAME;
+    private static final CivilityEnum UPDATED_CIVILITY = CivilityEnum.MONSIEUR;
+
+    private static final String DEFAULT_USERNAME = "AAAAAAAAAA";
+    private static final String UPDATED_USERNAME = "BBBBBBBBBB";
+
+    private static final LocalDate DEFAULT_BIRTH_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_BIRTH_DATE = LocalDate.now(ZoneId.systemDefault());
+
+    private static final String DEFAULT_BIRTH_COUNTRY = "AAAAAAAAAA";
+    private static final String UPDATED_BIRTH_COUNTRY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BIRTH_CITY = "AAAAAAAAAA";
+    private static final String UPDATED_BIRTH_CITY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BIRTH_DEPT = "AAAAAAAAAA";
+    private static final String UPDATED_BIRTH_DEPT = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NATIONALITY = "AAAAAAAAAA";
+    private static final String UPDATED_NATIONALITY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_OTHER_NAMES = "AAAAAAAAAA";
+    private static final String UPDATED_OTHER_NAMES = "BBBBBBBBBB";
 
     @Inject
     private UserRepository userRepository;
@@ -54,6 +82,14 @@ public class UserResourceIntTest {
         user.setFirstName("test");
         user.setLastName("test");
         user.setLangKey("en");
+        user.setCivility(DEFAULT_CIVILITY);
+        user.setUsername(DEFAULT_USERNAME);
+        user.setBirthDate(DEFAULT_BIRTH_DATE);
+        user.setBirthCountry(DEFAULT_BIRTH_COUNTRY);
+        user.setBirthCity(DEFAULT_BIRTH_CITY);
+        user.setBirthDept(DEFAULT_BIRTH_DEPT);
+        user.setNationality(DEFAULT_NATIONALITY);
+        user.setOtherNames(DEFAULT_OTHER_NAMES);
         em.persist(user);
         em.flush();
         return user;

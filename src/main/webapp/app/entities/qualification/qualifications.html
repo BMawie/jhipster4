@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="jhipsterApp.qualification.home.title">Qualifications</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="qualification.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterApp.qualification.home.createLabel">
+                        Create new Qualification
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span data-translate="jhipsterApp.qualification.type">Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="year"><span data-translate="jhipsterApp.qualification.year">Year</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="results"><span data-translate="jhipsterApp.qualification.results">Results</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="jhipsterApp.qualification.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="country"><span data-translate="jhipsterApp.qualification.country">Country</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="city"><span data-translate="jhipsterApp.qualification.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="schoolName"><span data-translate="jhipsterApp.qualification.schoolName">School Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="notes"><span data-translate="jhipsterApp.qualification.notes">Notes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="speciality"><span data-translate="jhipsterApp.qualification.speciality">Speciality</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="qualification in vm.qualifications track by qualification.id">
+                    <td><a ui-sref="qualification-detail({id:qualification.id})">{{qualification.id}}</a></td>
+                    <td>{{qualification.type}}</td>
+                    <td>{{qualification.year}}</td>
+                    <td>{{qualification.results}}</td>
+                    <td>{{qualification.name}}</td>
+                    <td>{{qualification.country}}</td>
+                    <td>{{qualification.city}}</td>
+                    <td>{{qualification.schoolName}}</td>
+                    <td>{{qualification.notes}}</td>
+                    <td>{{qualification.speciality}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="qualification-detail({id:qualification.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="qualification.edit({id:qualification.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="qualification.delete({id:qualification.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

@@ -3,6 +3,7 @@ package com.marie.jhipster.domain;
 import com.marie.jhipster.config.Constants;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.marie.jhipster.domain.enumeration.CivilityEnum;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.Email;
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -75,6 +77,31 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "reset_date", nullable = true)
     private ZonedDateTime resetDate = null;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "civility")
+    private CivilityEnum civility;
+
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
+
+    @Column(name = "birth_country")
+    private String birthCountry;
+
+    @Column(name = "birth_city")
+    private String birthCity;
+
+    @Column(name = "birth_dept")
+    private String birthDept;
+
+    @Column(name = "nationality")
+    private String nationality;
+
+    @Column(name = "other_names")
+    private String otherNames;
 
     @JsonIgnore
     @ManyToMany
@@ -195,6 +222,110 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.persistentTokens = persistentTokens;
     }
 
+    public CivilityEnum getCivility() {
+        return civility;
+    }
+
+    public User civility(CivilityEnum civility) {
+        this.civility = civility;
+        return this;
+    }
+
+    public void setCivility(CivilityEnum civility) {
+        this.civility = civility;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public User username(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public User birthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+        return this;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getBirthCountry() {
+        return birthCountry;
+    }
+
+    public User birthCountry(String birthCountry) {
+        this.birthCountry = birthCountry;
+        return this;
+    }
+
+    public void setBirthCountry(String birthCountry) {
+        this.birthCountry = birthCountry;
+    }
+
+    public String getBirthCity() {
+        return birthCity;
+    }
+
+    public User birthCity(String birthCity) {
+        this.birthCity = birthCity;
+        return this;
+    }
+
+    public void setBirthCity(String birthCity) {
+        this.birthCity = birthCity;
+    }
+
+    public String getBirthDept() {
+        return birthDept;
+    }
+
+    public User birthDept(String birthDept) {
+        this.birthDept = birthDept;
+        return this;
+    }
+
+    public void setBirthDept(String birthDept) {
+        this.birthDept = birthDept;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public User nationality(String nationality) {
+        this.nationality = nationality;
+        return this;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getOtherNames() {
+        return otherNames;
+    }
+
+    public User otherNames(String otherNames) {
+        this.otherNames = otherNames;
+        return this;
+    }
+
+    public void setOtherNames(String otherNames) {
+        this.otherNames = otherNames;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -228,6 +359,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +
             ", activationKey='" + activationKey + '\'' +
+            ", civility='" + civility + "'" +
+            ", username='" + username + "'" +
+            ", birthDate='" + birthDate + "'" +
+            ", birthCountry='" + birthCountry + "'" +
+            ", birthCity='" + birthCity + "'" +
+            ", birthDept='" + birthDept + "'" +
+            ", nationality='" + nationality + "'" +
+            ", otherNames='" + otherNames + "'" +
             "}";
     }
 }

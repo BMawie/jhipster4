@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "civility",
+            "fieldType": "CivilityEnum",
+            "fieldValues": "MADAME,MONSIEUR"
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "birthCountry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthDept",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nationality",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "otherNames",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170126103229",
+    "dto": "mapstruct",
+    "service": "no",
+    "entityTableName": "userbis",
+    "pagination": "no"
+}

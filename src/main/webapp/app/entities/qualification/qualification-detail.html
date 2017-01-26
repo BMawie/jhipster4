@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="jhipsterApp.qualification.detail.title">Qualification</span> {{vm.qualification.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterApp.qualification.type">Type</span></dt>
+        <dd>
+            <span>{{vm.qualification.type}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.year">Year</span></dt>
+        <dd>
+            <span>{{vm.qualification.year}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.results">Results</span></dt>
+        <dd>
+            <span>{{vm.qualification.results}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.name">Name</span></dt>
+        <dd>
+            <span>{{vm.qualification.name}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.country">Country</span></dt>
+        <dd>
+            <span>{{vm.qualification.country}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.city">City</span></dt>
+        <dd>
+            <span>{{vm.qualification.city}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.schoolName">School Name</span></dt>
+        <dd>
+            <span>{{vm.qualification.schoolName}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.notes">Notes</span></dt>
+        <dd>
+            <span>{{vm.qualification.notes}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.qualification.speciality">Speciality</span></dt>
+        <dd>
+            <span>{{vm.qualification.speciality}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="qualification-detail.edit({id:vm.qualification.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

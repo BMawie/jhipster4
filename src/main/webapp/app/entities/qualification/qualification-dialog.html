@@ -1,0 +1,80 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myQualificationLabel" data-translate="jhipsterApp.qualification.home.createOrEditLabel">Create or edit a Qualification</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.qualification.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.qualification.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.qualification.type"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.year" for="field_year">Year</label>
+            <input type="number" class="form-control" name="year" id="field_year"
+                    ng-model="vm.qualification.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.results" for="field_results">Results</label>
+            <input type="text" class="form-control" name="results" id="field_results"
+                    ng-model="vm.qualification.results"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.qualification.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.country" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                    ng-model="vm.qualification.country"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="vm.qualification.city"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.schoolName" for="field_schoolName">School Name</label>
+            <input type="text" class="form-control" name="schoolName" id="field_schoolName"
+                    ng-model="vm.qualification.schoolName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.notes" for="field_notes">Notes</label>
+            <input type="text" class="form-control" name="notes" id="field_notes"
+                    ng-model="vm.qualification.notes"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.qualification.speciality" for="field_speciality">Speciality</label>
+            <input type="text" class="form-control" name="speciality" id="field_speciality"
+                    ng-model="vm.qualification.speciality"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

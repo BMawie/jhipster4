@@ -1,0 +1,9 @@
+{
+    "jhipsterApp": {
+        "CivilityEnum" : {
+            "null": "",
+            "MADAME": "MADAME",
+            "MONSIEUR": "MONSIEUR"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "results",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "schoolName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "speciality",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170126104719",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "qualification",
+    "pagination": "pagination"
+}

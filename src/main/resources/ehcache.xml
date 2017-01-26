@@ -20,5 +20,7 @@
 
     <cache alias="com.marie.jhipster.domain.User.persistentTokens" uses-template="simple"/>
 
+    <cache alias="com.marie.jhipster.domain.Qualification" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>
